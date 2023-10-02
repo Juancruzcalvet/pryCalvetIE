@@ -23,8 +23,8 @@ namespace pryCalvetIE
             if (txtUsuario.Text == "Administrador" && txtContrasena.Text == "Administrador")
             {
                 this.Hide();
-                frmArchivo frmArchivo = new frmArchivo();
-                frmArchivo.Show();
+                frmPrincipal frmPrincipal = new frmPrincipal();
+                frmPrincipal.Show();
             }
             else
             {

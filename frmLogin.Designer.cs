@@ -38,7 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 10);
+            this.label1.Location = new System.Drawing.Point(116, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 75);
+            this.label2.Location = new System.Drawing.Point(107, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
@@ -55,14 +55,14 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(28, 38);
+            this.txtUsuario.Location = new System.Drawing.Point(87, 36);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(28, 101);
+            this.txtContrasena.Location = new System.Drawing.Point(87, 99);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(100, 20);
@@ -70,7 +70,7 @@
             // 
             // cmdEntrar
             // 
-            this.cmdEntrar.Location = new System.Drawing.Point(41, 155);
+            this.cmdEntrar.Location = new System.Drawing.Point(100, 153);
             this.cmdEntrar.Name = "cmdEntrar";
             this.cmdEntrar.Size = new System.Drawing.Size(75, 23);
             this.cmdEntrar.TabIndex = 4;
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(158, 190);
+            this.ClientSize = new System.Drawing.Size(275, 218);
             this.Controls.Add(this.cmdEntrar);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);

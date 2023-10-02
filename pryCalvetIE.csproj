@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmArchivo.cs">
+    <Compile Include="frmABM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmArchivo.Designer.cs">
-      <DependentUpon>frmArchivo.cs</DependentUpon>
+    <Compile Include="frmABM.Designer.cs">
+      <DependentUpon>frmABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentanaGrilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentanaGrilla.Designer.cs">
+      <DependentUpon>frmVentanaGrilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -64,16 +76,31 @@
     <Compile Include="frmCarga.Designer.cs">
       <DependentUpon>frmCarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVistaProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVistaProveedores.Designer.cs">
+      <DependentUpon>frmVistaProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmArchivo.resx">
-      <DependentUpon>frmArchivo.cs</DependentUpon>
+    <EmbeddedResource Include="frmABM.resx">
+      <DependentUpon>frmABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentanaGrilla.resx">
+      <DependentUpon>frmVentanaGrilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarga.resx">
       <DependentUpon>frmCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVistaProveedores.resx">
+      <DependentUpon>frmVistaProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
