@@ -204,6 +204,22 @@ namespace pryCalvetIE
             frmVentanaGrilla frmVentanaGrilla = new frmVentanaGrilla();
             frmVentanaGrilla.Show();
             this.Close();
+
+            using (StreamReader reader = new StreamReader(@"../../bin/Debug/Proveedores/datosProveedor.csv"))
+            {
+                // Lee y descarta la primera línea (encabezado)
+                reader.ReadLine();
+
+                // Lee el resto de las líneas
+                string linea;
+                while ((linea = reader.ReadLine()) != null)
+                {
+                    // Procesa la línea actual aquí
+                    string[] parametros = linea.Split(';');
+                    //agregar a la datagrid
+                    frmVentanaGrilla.dgvArchivito.Rows.Add(parametros);
+                }
+            }
         }
     }
 }

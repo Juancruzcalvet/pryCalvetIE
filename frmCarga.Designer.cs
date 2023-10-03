@@ -57,7 +57,6 @@
             // timerBarra
             // 
             this.timerBarra.Enabled = true;
-            this.timerBarra.Interval = 500;
             this.timerBarra.Tick += new System.EventHandler(this.timerBarra_Tick);
             // 
             // lblPorcentaje

@@ -105,7 +105,7 @@ namespace pryCalvetIE
             string rutaArchivoParcial = Path.Combine(rutaActual, a);
 
             //Aca esta la ruta final del archivo
-            string rutaArchivoFinal = Path.Combine(@"../../bin/Debug/Proveedores", rutaArchivoParcial);
+            string rutaArchivoFinal = Path.Combine(@"../../bin/Debug/Proveedores/datosProveedor.csv");
 
             //Instanciar la ventana de la grilla
             frmVentanaGrilla frmVentanaGrilla = new frmVentanaGrilla();
@@ -161,6 +161,11 @@ namespace pryCalvetIE
             frmPrincipal frmPrincipal = new frmPrincipal();
             frmPrincipal.Show();
             this.Close();
+        }
+
+        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

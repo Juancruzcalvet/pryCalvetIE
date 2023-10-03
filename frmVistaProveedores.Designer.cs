@@ -30,11 +30,11 @@
         {
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.trvProveedor = new System.Windows.Forms.TreeView();
+            this.cmdVolver = new System.Windows.Forms.Button();
             this.lstMostrar = new System.Windows.Forms.ListView();
             this.ColumnaNombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnaTipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnaFecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cmdVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -55,6 +55,7 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.cmdVolver);
             this.splitContainer2.Panel2.Controls.Add(this.lstMostrar);
+            this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
             this.splitContainer2.Size = new System.Drawing.Size(872, 483);
             this.splitContainer2.SplitterDistance = 289;
             this.splitContainer2.TabIndex = 0;
@@ -66,6 +67,17 @@
             this.trvProveedor.Name = "trvProveedor";
             this.trvProveedor.Size = new System.Drawing.Size(289, 483);
             this.trvProveedor.TabIndex = 0;
+            this.trvProveedor.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvProveedor_AfterSelect);
+            // 
+            // cmdVolver
+            // 
+            this.cmdVolver.Location = new System.Drawing.Point(271, 448);
+            this.cmdVolver.Name = "cmdVolver";
+            this.cmdVolver.Size = new System.Drawing.Size(75, 23);
+            this.cmdVolver.TabIndex = 1;
+            this.cmdVolver.Text = "Volver";
+            this.cmdVolver.UseVisualStyleBackColor = true;
+            this.cmdVolver.Click += new System.EventHandler(this.cmdVolver_Click);
             // 
             // lstMostrar
             // 
@@ -97,16 +109,6 @@
             // 
             this.ColumnaFecha.Text = "Última modificiación";
             this.ColumnaFecha.Width = 242;
-            // 
-            // cmdVolver
-            // 
-            this.cmdVolver.Location = new System.Drawing.Point(271, 448);
-            this.cmdVolver.Name = "cmdVolver";
-            this.cmdVolver.Size = new System.Drawing.Size(75, 23);
-            this.cmdVolver.TabIndex = 1;
-            this.cmdVolver.Text = "Volver";
-            this.cmdVolver.UseVisualStyleBackColor = true;
-            this.cmdVolver.Click += new System.EventHandler(this.cmdVolver_Click);
             // 
             // frmVistaProveedores
             // 
