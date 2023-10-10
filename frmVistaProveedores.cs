@@ -27,7 +27,7 @@ namespace pryCalvetIE
         {
             TreeNode rootNode;
 
-            DirectoryInfo info = new DirectoryInfo(@"../../bin/Debug");
+            DirectoryInfo info = new DirectoryInfo(@"../../Proveedores/");
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
@@ -86,6 +86,28 @@ namespace pryCalvetIE
 
             lstMostrar.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
+        private string GetNodePath(TreeNode node)
+        {
+            // Recorre los nodos ascendentes para construir la ruta completa
+            string path = node.Text;
+            TreeNode currentNode = node.Parent;
+
+            while (currentNode != null)
+            {
+                path = currentNode.Text + "\\" + path;
+                currentNode = currentNode.Parent;
+            }
+
+            return path;
+        }
+        private void trvProveedor_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            // Obtener el nodo seleccionado
+            TreeNode selectedNode = e.Node;
+
+            // Actualizar la ruta actual con la ruta del nodo seleccionado
+            rutaActual = GetNodePath(selectedNode);
+        }
         private void frmVistaProveedores_Load(object sender, EventArgs e)
         {
 
@@ -105,7 +127,9 @@ namespace pryCalvetIE
             string rutaArchivoParcial = Path.Combine(rutaActual, a);
 
             //Aca esta la ruta final del archivo
-            string rutaArchivoFinal = Path.Combine(@"../../bin/Debug/Proveedores/datosProveedor.csv");
+            DirectoryInfo info = new DirectoryInfo(@"../..");
+            
+            string rutaArchivoFinal = info.FullName +"\\"+ rutaArchivoParcial;
 
             //Instanciar la ventana de la grilla
             frmVentanaGrilla frmVentanaGrilla = new frmVentanaGrilla();
@@ -133,28 +157,7 @@ namespace pryCalvetIE
             this.Hide();
 
         }
-        private string GetNodePath(TreeNode node)
-        {
-            // Recorre los nodos ascendentes para construir la ruta completa
-            string path = node.Text;
-            TreeNode currentNode = node.Parent;
 
-            while (currentNode != null)
-            {
-                path = currentNode.Text + "\\" + path;
-                currentNode = currentNode.Parent;
-            }
-
-            return path;
-        }
-        private void trvProveedor_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            // Obtener el nodo seleccionado
-            TreeNode selectedNode = e.Node;
-
-            // Actualizar la ruta actual con la ruta del nodo seleccionado
-            rutaActual = GetNodePath(selectedNode);
-        }
 
         private void cmdVolver_Click(object sender, EventArgs e)
         {
@@ -164,6 +167,11 @@ namespace pryCalvetIE
         }
 
         private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lstMostrar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

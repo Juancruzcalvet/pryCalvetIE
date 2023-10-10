@@ -68,6 +68,7 @@
             this.trvProveedor.Size = new System.Drawing.Size(289, 483);
             this.trvProveedor.TabIndex = 0;
             this.trvProveedor.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvProveedor_AfterSelect);
+            this.trvProveedor.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvProveedor_NodeMouseClick);
             // 
             // cmdVolver
             // 
@@ -93,6 +94,7 @@
             this.lstMostrar.TabIndex = 0;
             this.lstMostrar.UseCompatibleStateImageBehavior = false;
             this.lstMostrar.View = System.Windows.Forms.View.Details;
+            this.lstMostrar.SelectedIndexChanged += new System.EventHandler(this.lstMostrar_SelectedIndexChanged);
             this.lstMostrar.DoubleClick += new System.EventHandler(this.lstMostrar_DoubleClick);
             // 
             // ColumnaNombre
