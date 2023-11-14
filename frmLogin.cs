@@ -14,6 +14,7 @@ namespace pryCalvetIE
     {
         public static string Nombre;
         public static string Contrasena;
+        public static string Perfil;
         clsLogin objLogin;
         clsLogs objLogs;
         public frmLogin()
@@ -47,11 +48,13 @@ namespace pryCalvetIE
             clsLogs objLogs = new clsLogs();
             if (clsLogin.acceso == true)
             {
+                Nombre = txtUsuario.Text;
+                
                 objLogs.RegistroLogInicioSesionExitoso();
 
 
                 this.Hide();
-                frmPrincipal frmPrincipal = new frmPrincipal();
+                frmPrincipal frmPrincipal = new frmPrincipal(Nombre, Perfil);
                 frmPrincipal.Show();
             }
             else

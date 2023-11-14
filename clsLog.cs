@@ -29,7 +29,7 @@ namespace pryCalvetIE
 
             try
             {
-                RutaConexionBase = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = C:\\Users\\Juan\\Desktop\\pryCalvetIE\\EL_CLUB.accdb";
+                RutaConexionBase = @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = E:\Escritorio\IEFICalvet\ElClub\EL_CLUB.accdb";
 
                 conexionBD = new OleDbConnection();
                 conexionBD.ConnectionString = RutaConexionBase;
@@ -54,7 +54,7 @@ namespace pryCalvetIE
         {
             try
             {
-                string conexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = C:\\Users\\Juan\\Desktop\\pryCalvetIE\\EL_CLUB.accdb";
+                string conexion = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = E:\Escritorio\IEFICalvet\ElClub\EL_CLUB.accdb";
 
                 conexionBD.ConnectionString = conexion;
                 conexionBD.Open();

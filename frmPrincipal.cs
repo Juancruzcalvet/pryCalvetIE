@@ -17,9 +17,7 @@ namespace pryCalvetIE
             InitializeComponent();
         }
 
-        public frmPrincipal()
-        {
-        }
+
 
         private void cargarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {

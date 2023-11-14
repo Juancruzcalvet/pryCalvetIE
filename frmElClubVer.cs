@@ -15,6 +15,9 @@ namespace pryCalvetIE
         clsLogin objDS;
         clsLogs objLogs;
 
+        public string Nombre;
+        public string Perfil;
+
         public frmElClubVer()
         {
             InitializeComponent();
@@ -39,7 +42,7 @@ namespace pryCalvetIE
 
         private void cmdVolver_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal frmPrincipal = new frmPrincipal(Nombre, Perfil);
             frmPrincipal.Show();
             this.Close();
         }

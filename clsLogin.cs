@@ -10,6 +10,7 @@ using System.Security.Policy;
 
 namespace pryCalvetIE
 {
+    
     internal class clsLogin
     {
         //A través de esto establecemos conexión a base de datos
@@ -20,14 +21,14 @@ namespace pryCalvetIE
         OleDbDataReader Leer_BD;
         //Nos permite actualizar la base de datos y permite llenar el dataset
         OleDbDataAdapter Adaptador_BD;
-
+        
 
         // Objeto DataSet para llenar con lo que tenga la tabla de la BD
         DataSet objDS = new DataSet(); 
         //String vacio para recibir estado de la base de datos
         public string EstadoConexion = "";
         //Ruta de base de datos
-        string ConexionUsuarios = @"Provider = Microsoft.ACE.OLEDB.12.0;"" + "" Data Source = C:\Users\Juan\Desktop\pryCalvetIE\EL_CLUB.accdb";
+        string ConexionUsuarios = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = E:\Escritorio\IEFICalvet\ElClub\EL_CLUB.accdb";
         //Booleano de acceso, verdadero o falso. Indica si estas o no dentro de la BD
         public static bool acceso;
         public clsLogin()
@@ -111,6 +112,7 @@ namespace pryCalvetIE
                         {
                             acceso = true;
                             break;
+                            
                         }
                         else
                         {
