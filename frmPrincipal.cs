@@ -12,9 +12,13 @@ namespace pryCalvetIE
 {
     public partial class frmPrincipal : Form
     {
-        public frmPrincipal()
+        public frmPrincipal(string Nombre, string Perfil)
         {
             InitializeComponent();
+        }
+
+        public frmPrincipal()
+        {
         }
 
         private void cargarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -33,6 +37,18 @@ namespace pryCalvetIE
         private void cargaDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verGrillaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmElClubVer frmElClubVer = new frmElClubVer();
+            frmElClubVer.Show();
         }
     }
 }

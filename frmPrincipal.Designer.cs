@@ -33,10 +33,9 @@
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vistaDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargaDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.elClubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verGrillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,10 +43,10 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.proveedoresToolStripMenuItem,
-            this.clientesToolStripMenuItem});
+            this.elClubToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(325, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(327, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,39 +73,32 @@
             this.vistaDeProveedoresToolStripMenuItem.Text = "Vista de proveedores";
             this.vistaDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.vistaDeProveedoresToolStripMenuItem_Click);
             // 
-            // clientesToolStripMenuItem
-            // 
-            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cargaDeClientesToolStripMenuItem,
-            this.verClientesToolStripMenuItem});
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // cargaDeClientesToolStripMenuItem
-            // 
-            this.cargaDeClientesToolStripMenuItem.Name = "cargaDeClientesToolStripMenuItem";
-            this.cargaDeClientesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.cargaDeClientesToolStripMenuItem.Text = "Carga de clientes";
-            this.cargaDeClientesToolStripMenuItem.Click += new System.EventHandler(this.cargaDeClientesToolStripMenuItem_Click);
-            // 
-            // verClientesToolStripMenuItem
-            // 
-            this.verClientesToolStripMenuItem.Name = "verClientesToolStripMenuItem";
-            this.verClientesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.verClientesToolStripMenuItem.Text = "Ver clientes";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // elClubToolStripMenuItem
+            // 
+            this.elClubToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verGrillaToolStripMenuItem});
+            this.elClubToolStripMenuItem.Name = "elClubToolStripMenuItem";
+            this.elClubToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.elClubToolStripMenuItem.Text = "El Club";
+            // 
+            // verGrillaToolStripMenuItem
+            // 
+            this.verGrillaToolStripMenuItem.Name = "verGrillaToolStripMenuItem";
+            this.verGrillaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verGrillaToolStripMenuItem.Text = "Ver grilla";
+            this.verGrillaToolStripMenuItem.Click += new System.EventHandler(this.verGrillaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::pryCalvetIE.Properties.Resources.seguro;
-            this.ClientSize = new System.Drawing.Size(325, 244);
+            this.ClientSize = new System.Drawing.Size(327, 255);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -114,6 +106,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Página principal";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -124,12 +117,11 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargaDeClientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vistaDeProveedoresToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem elClubToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verGrillaToolStripMenuItem;
     }
 }

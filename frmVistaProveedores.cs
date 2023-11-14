@@ -21,7 +21,10 @@ namespace pryCalvetIE
 
 
         }
+
         public string rutaActual = "";
+        string Nombre = "";
+        string Perfil = "";
 
         private void LlenarTreeView()
         {
@@ -117,7 +120,6 @@ namespace pryCalvetIE
         {
 
         }
-
         private void lstMostrar_DoubleClick(object sender, EventArgs e)
         {
             //Obtengo el texto que tiene el item seleccionado lstView
@@ -161,7 +163,7 @@ namespace pryCalvetIE
 
         private void cmdVolver_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal frmPrincipal = new frmPrincipal(Nombre, Perfil);
             frmPrincipal.Show();
             this.Close();
         }

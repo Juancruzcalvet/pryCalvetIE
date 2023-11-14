@@ -5,6 +5,11 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pryCalvetIE", "pryCalvetIE.csproj", "{F6C8E5F5-720E-474A-8DCE-2A6504278E11}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{7FFCDDD0-B229-4E7F-A800-AE3DB6C71EDD}"
+	ProjectSection(SolutionItems) = preProject
+		El club\EL_CLUB.accdb = El club\EL_CLUB.accdb
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
