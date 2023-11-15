@@ -28,7 +28,7 @@ namespace pryCalvetIE
         //String vacio para recibir estado de la base de datos
         public string EstadoConexion = "";
         //Ruta de base de datos
-        string ConexionUsuarios = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = E:\Escritorio\IEFICalvet\ElClub\EL_CLUB.accdb";
+        string ConexionUsuarios = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\ElClub\EL_CLUB.accdb";
         //Booleano de acceso, verdadero o falso. Indica si estas o no dentro de la BD
         public static bool acceso;
         public clsLogin()

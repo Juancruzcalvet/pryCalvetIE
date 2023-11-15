@@ -18,7 +18,7 @@ namespace pryCalvetIE
         OleDbDataAdapter adaptadorBD;
         DataSet objDS = new DataSet();
 
-        string RutaConexionBase;
+        string RutaConexionBase = "..\\..\\ElClub\\EL_CLUB.accdb";
 
 
         public string estadoDeConexion;
@@ -29,7 +29,6 @@ namespace pryCalvetIE
 
             try
             {
-                RutaConexionBase = @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = E:\Escritorio\IEFICalvet\ElClub\EL_CLUB.accdb";
 
                 conexionBD = new OleDbConnection();
                 conexionBD.ConnectionString = RutaConexionBase;
@@ -54,9 +53,8 @@ namespace pryCalvetIE
         {
             try
             {
-                string conexion = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = E:\Escritorio\IEFICalvet\ElClub\EL_CLUB.accdb";
 
-                conexionBD.ConnectionString = conexion;
+                conexionBD.ConnectionString = RutaConexionBase;
                 conexionBD.Open();
 
             }
@@ -121,7 +119,7 @@ namespace pryCalvetIE
                 DataTable objTabla = objDS.Tables["Logs"];
                 DataRow nuevoRegistro = objTabla.NewRow();
                 nuevoRegistro["Accion"] = "Inicio Sesión";
-                nuevoRegistro["FechaHora"] = DateTime.Now;
+                nuevoRegistro["Fecha"] = DateTime.Now;
                 nuevoRegistro["Usuario"] = frmLogin.Nombre;
                 objTabla.Rows.Add(nuevoRegistro);
                 OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
@@ -160,15 +158,13 @@ namespace pryCalvetIE
                 DataRow nuevoRegistro = objTabla.NewRow();
 
                 nuevoRegistro["Accion"] = "Crear cuenta";
-                nuevoRegistro["FechaHora"] = DateTime.Now;
+                nuevoRegistro["Fecha"] = DateTime.Now;
                 nuevoRegistro["Usuario"] = frmCrearUsuario.usuarioCrearCuenta;
 
                 objTabla.Rows.Add(nuevoRegistro);
 
                 OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
                 adaptadorBD.Update(objDS, "Logs");
-
-                estadoDeConexion = "Registro exitoso de log";
             }
             catch (Exception error)
             {
@@ -207,8 +203,6 @@ namespace pryCalvetIE
 
                 OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
                 adaptadorBD.Update(objDS, "Logs");
-
-                estadoDeConexion = "Registro exitoso de log";
             }
             catch (Exception error)
             {
@@ -238,10 +232,8 @@ namespace pryCalvetIE
                 DataRow nuevoRegistro = objTabla.NewRow();
 
                 nuevoRegistro["Accion"] = "Ver socios del club";
-                nuevoRegistro["FechaHora"] = DateTime.Now;
-                nuevoRegistro["Descripcion"] = "Exitoso";
+                nuevoRegistro["Fecha"] = DateTime.Now;
                 nuevoRegistro["Usuario"] = frmLogin.Nombre;
-
                 objTabla.Rows.Add(nuevoRegistro);
 
                 OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
@@ -278,16 +270,13 @@ namespace pryCalvetIE
                 DataRow nuevoRegistro = objTabla.NewRow();
 
                 nuevoRegistro["Accion"] = "Cambiar estado de socio";
-                nuevoRegistro["FechaHora"] = DateTime.Now;
-                nuevoRegistro["Descripcion"] = "Exitoso";
+                nuevoRegistro["Fecha"] = DateTime.Now;
                 nuevoRegistro["Usuario"] = frmLogin.Nombre;
 
                 objTabla.Rows.Add(nuevoRegistro);
 
                 OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
                 adaptadorBD.Update(objDS, "Logs");
-
-                estadoDeConexion = "Registro exitoso de log";
             }
             catch (Exception error)
             {
