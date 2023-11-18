@@ -18,7 +18,7 @@ namespace pryCalvetIE
         OleDbDataAdapter adaptadorBD;
         DataSet objDS = new DataSet();
 
-        string RutaConexionBase = "..\\..\\ElClub\\EL_CLUB.accdb";
+        public string RutaConexionBase = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\ElClub\EL_CLUB.accdb";
 
 
         public string estadoDeConexion;

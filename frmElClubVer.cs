@@ -36,6 +36,15 @@ namespace pryCalvetIE
             lblEstadoConexion.BackColor = Color.Green;
             //Mostramos en grilla
             objDS.TraerDatosElClub(dgvElClub);
+            dgvElClub.Columns.Add("CODIGO_SOCIO", "CODIGO_SOCIO");
+            dgvElClub.Columns.Add("NOMBRE", "NOMBRE");
+            dgvElClub.Columns.Add("APELLIDO", "APELLIDO");
+            dgvElClub.Columns.Add("LUGAR_NACIMIENTO", "LUGAR_NACIMIENTO");
+            dgvElClub.Columns.Add("EDAD", "EDAD");
+            dgvElClub.Columns.Add("EDAD", "EDAD");
+            dgvElClub.Columns.Add("SEXO", "SEXO");
+            dgvElClub.Columns.Add("PUNTAJE", "PUNTAJE");
+            dgvElClub.Columns.Add("ESTADO", "ESTADO");
 
 
         }
@@ -55,7 +64,7 @@ namespace pryCalvetIE
             objLogs.RegistroLogBuscarClientePorId();
 
             //Usamos lo escrito en el txt para buscar en la BD
-            objDS.BuscarPorCodigoDatosElClub(int.Parse(txtID.Text));
+            objDS.BuscarPorCodigoDatosElClub(int.Parse(txtID.Text), dgvElClub);
         }
         int id = 0;
         private void button3_Click(object sender, EventArgs e)
@@ -65,12 +74,18 @@ namespace pryCalvetIE
             //Instanciamos las instrucciones
             clsLogin objLogin = new clsLogin();
             //Llamamos metodo
-            objLogin.ModificarEstadoSocio(id);
+            objLogin.ModificarEstadoSocio(id, dgvElClub);
 
             //Guardamos en logs lo hecho
             clsLogs objLogs = new clsLogs();
             objLogs.RegistroLogCambiarEstado();
+            objDS.TraerDatosElClub(dgvElClub);
 
+        }
+
+        private void cmdMostrarTodo_Click(object sender, EventArgs e)
+        {
+            objDS.TraerDatosElClub(dgvElClub);
         }
     }
 }

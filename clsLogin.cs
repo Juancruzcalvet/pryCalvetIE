@@ -130,9 +130,6 @@ namespace pryCalvetIE
 
         public void TraerDatosElClub(DataGridView grilla)
         {
-            //Estos nos sirven para "traducir" lo que dice la tabla.
-            string estadoCliente = "";
-            string sexo = "";
 
             try
             {
@@ -146,39 +143,12 @@ namespace pryCalvetIE
                 //Ejecuto un comando y creo un lector de datos para leer los resultados 
                 Leer_BD = Comando_BD.ExecuteReader();
 
-                grilla.Columns.Add("ID", "ID");
-                grilla.Columns.Add("Nombre", "Nombre");
-                grilla.Columns.Add("Apellido", "Apellido");
-                grilla.Columns.Add("Nacionalidad", "Nacionalidad");
-                grilla.Columns.Add("Edad", "Edad");
-                grilla.Columns.Add("Sexo", "Sexo");
-                grilla.Columns.Add("Ingreso", "Ingreso");
-                grilla.Columns.Add("Puntaje", "Puntaje");
-                grilla.Columns.Add("Estado", "Estado");
-
                 if (Leer_BD.HasRows)
                 {
                     while (Leer_BD.Read())
                     {
-                        if (Leer_BD.GetBoolean(8) == true)
-                        {
-                            estadoCliente = "Activo";
-                        }
-                        else
-                        {
-                            estadoCliente = "Inactivo";
-                        }
-
-                        if (Leer_BD.GetBoolean(5) == true)
-                        {
-                            sexo = "Masculino";
-                        }
-                        else
-                        {
-                            sexo = "Femenino";
-                        }
-
-                        grilla.Rows.Add(Leer_BD[0], Leer_BD[1], Leer_BD[2], Leer_BD[3], Leer_BD[4], sexo, Leer_BD[6], Leer_BD[7], estadoCliente);
+                        grilla.Rows.Clear();
+                        grilla.Rows.Add(Leer_BD[0], Leer_BD[1], Leer_BD[2], Leer_BD[3], Leer_BD[4], Leer_BD[5], Leer_BD[6], Leer_BD[7], Leer_BD[8]);
 
                     }
                 }
@@ -189,7 +159,7 @@ namespace pryCalvetIE
             }
         }
 
-        public void BuscarPorCodigoDatosElClub(int codigoSocio)
+        public void BuscarPorCodigoDatosElClub(int codigoSocio, DataGridView Grilla)
         {
             try
             {
@@ -209,7 +179,8 @@ namespace pryCalvetIE
                         //si ID = a lo ingresado por txt
                         if (int.Parse(Leer_BD[0].ToString()) == codigoSocio)
                         {
-                            MessageBox.Show("Cliente existente: \n" + Leer_BD[1].ToString() + " " + Leer_BD[2].ToString(), "Consulta");
+                            Grilla.Rows.Clear();
+                            Grilla.Rows.Add(Leer_BD[0], Leer_BD[1], Leer_BD[2], Leer_BD[3], Leer_BD[4], Leer_BD[5], Leer_BD[6], Leer_BD[7], Leer_BD[8]);
                             seEncuentra = true;
                             break;
                         }
@@ -263,7 +234,7 @@ namespace pryCalvetIE
             }
         }
 
-        public void ModificarEstadoSocio(int id)
+        public void ModificarEstadoSocio(int id, DataGridView dataGridView )
         {
             OleDbCommand Comando_BD = new OleDbCommand();
             OleDbDataAdapter objAdaptador;
@@ -303,13 +274,17 @@ namespace pryCalvetIE
                     registro.BeginEdit();
 
                     //Cambiamos según sea el estado del socio
-                    if ((bool)registro["ESTADO"])
+                    if ((bool)(registro["ESTADO"] = "Activo"))
                     {
-                        registro["ESTADO"] = false;
+                        registro["ESTADO"] = "Inactivo";
                     }
                     else
                     {
-                        registro["ESTADO"] = true;
+                        if ((bool)(registro["ESTADO"] = "Inactivo"))
+                        {
+                            registro["ESTADO"] = "Activo";
+                        }
+                            
                     }
 
                     //Finalizamos la edición de la fila 

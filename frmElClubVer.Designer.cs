@@ -41,6 +41,7 @@
             this.txtActividad = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstadoConexion = new System.Windows.Forms.Label();
+            this.cmdMostrarTodo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvElClub)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -170,11 +171,22 @@
             this.lblEstadoConexion.TabIndex = 10;
             this.lblEstadoConexion.Text = "- - - -";
             // 
+            // cmdMostrarTodo
+            // 
+            this.cmdMostrarTodo.Location = new System.Drawing.Point(315, 358);
+            this.cmdMostrarTodo.Name = "cmdMostrarTodo";
+            this.cmdMostrarTodo.Size = new System.Drawing.Size(192, 23);
+            this.cmdMostrarTodo.TabIndex = 11;
+            this.cmdMostrarTodo.Text = "Mostrar listado completo";
+            this.cmdMostrarTodo.UseVisualStyleBackColor = true;
+            this.cmdMostrarTodo.Click += new System.EventHandler(this.cmdMostrarTodo_Click);
+            // 
             // frmElClubVer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 457);
+            this.Controls.Add(this.cmdMostrarTodo);
             this.Controls.Add(this.lblEstadoConexion);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
@@ -210,5 +222,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Label lblEstadoConexion;
         private System.Windows.Forms.TextBox txtActividad;
+        private System.Windows.Forms.Button cmdMostrarTodo;
     }
 }
