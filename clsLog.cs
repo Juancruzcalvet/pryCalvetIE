@@ -283,5 +283,40 @@ namespace pryCalvetIE
                 estadoDeConexion = error.Message;
             }
         }
+        public void RegistroLogVistaDeProovedores()
+        {
+            try
+            {
+                //Lo mismo que antes pero lo hacemos en caso de que abra El formulario de ELCLUB y cambie el estado de un o varios clientes.
+                ConectarBD();
+
+                comandoBD = new OleDbCommand();
+
+                comandoBD.Connection = conexionBD;
+                comandoBD.CommandType = System.Data.CommandType.TableDirect;
+                comandoBD.CommandText = "Logs";
+
+                adaptadorBD = new OleDbDataAdapter(comandoBD);
+
+                adaptadorBD.Fill(objDS, "Logs");
+
+                DataTable objTabla = objDS.Tables["Logs"];
+                DataRow nuevoRegistro = objTabla.NewRow();
+
+                nuevoRegistro["Accion"] = "Manejo de proveedores";
+                nuevoRegistro["Fecha"] = DateTime.Now;
+                nuevoRegistro["Usuario"] = frmLogin.Nombre;
+
+                objTabla.Rows.Add(nuevoRegistro);
+
+                OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
+                adaptadorBD.Update(objDS, "Logs");
+            }
+            catch (Exception error)
+            {
+                estadoDeConexion = error.Message;
+            }
+        }
     }
 }
+

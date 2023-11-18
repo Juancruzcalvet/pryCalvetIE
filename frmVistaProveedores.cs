@@ -113,6 +113,8 @@ namespace pryCalvetIE
         }
         private void frmVistaProveedores_Load(object sender, EventArgs e)
         {
+            clsLogs objLogs = new clsLogs();
+            objLogs.RegistroLogVistaDeProovedores();
 
         }
 
@@ -166,16 +168,6 @@ namespace pryCalvetIE
             frmPrincipal frmPrincipal = new frmPrincipal(Nombre, Perfil);
             frmPrincipal.Show();
             this.Close();
-        }
-
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lstMostrar_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
